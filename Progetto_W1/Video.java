@@ -1,9 +1,9 @@
 import java.sql.SQLOutput;
 
 class Video extends ElementoMultimediale implements Riproducibile {
-    private int volume; // volume del video
-    private int luminosita; // luminosità del video
-    private int durata; // durata del video
+    private int volume;
+    private int luminosita;
+    private int durata;
 
     public Video(String titolo, int volume, int luminosita, int durata) {
         super(titolo);
@@ -12,7 +12,6 @@ class Video extends ElementoMultimediale implements Riproducibile {
         this.durata = durata;
     }
 
-    // Rimuovi i metodi aumentaLuminosita() e diminuisciLuminosita() per evitare confusione
 
     @Override
     public void play() {
@@ -20,7 +19,9 @@ class Video extends ElementoMultimediale implements Riproducibile {
         for (int i = 0; i < durata; i++) {
             String puntiEsclamativi = "!".repeat(volume);
             String asterischi = "*".repeat(luminosita);
+            String punti = ".".repeat(durata - i);
             System.out.println(titolo + ":");
+            System.out.println("-Durata: " + punti);
             System.out.println("-Volume: " + puntiEsclamativi);
             System.out.println("-Luminosità: " + asterischi);
         }

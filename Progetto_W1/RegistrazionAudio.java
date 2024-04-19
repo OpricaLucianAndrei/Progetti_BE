@@ -20,10 +20,13 @@ public class RegistrazionAudio extends ElementoMultimediale implements Riproduci
         System.out.println("--------------------------------");
         for (int i = 0; i < durata; i++) {
             String puntiEsclamativi = "!".repeat(volume);
+            String punti = ".".repeat(durata - i);
             System.out.println(titolo + ":");
+            System.out.println("-Durata: " + punti);
             System.out.println("-Volume: " + puntiEsclamativi);
         }
         System.out.println("--------------------------------");
+
     }
 
     @Override
